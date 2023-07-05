@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:get_dependencias/core/widgets/elevated_button_custom.dart';
 
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+class MetodosHomePage extends StatelessWidget {
+  const MetodosHomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Home Page'),
+        title: const Text('Métodos'),
       ),
       body: Center(
         child: Column(
@@ -16,15 +16,9 @@ class HomePage extends StatelessWidget {
           children: [
             ElevatedButtonCustom(
               onPressed: () {
-                Navigator.of(context).pushNamed('/basico');
+                Navigator.of(context).pushNamed('/metodos/put');
               },
-              text: 'Básico',
-            ),
-            ElevatedButtonCustom(
-              onPressed: () {
-                Navigator.of(context).pushNamed('/metodos');
-              },
-              text: 'Métodos',
+              text: 'Put',
             ),
           ],
         ),
