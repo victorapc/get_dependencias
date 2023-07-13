@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get_dependencias/pages/bindings/bindings_controller.dart';
+import 'package:get_dependencias/pages/bindings/bindings_example.dart';
+import 'package:get_dependencias/pages/bindings/home_bindings_page.dart';
 import 'package:get_dependencias/pages/home_page.dart';
 import 'package:get_dependencias/pages/metodos/create/create_home_page.dart';
 import 'package:get_dependencias/pages/metodos/delete_update/update_home_page.dart';
@@ -61,9 +64,29 @@ class MyApp extends StatelessWidget {
             ),
             GetPage(
               name: '/delete',
-              page: () => DeleteHomePage(),
+              page: () => const DeleteHomePage(),
             ),
           ],
+        ),
+        GetPage(
+          name: '/bindings',
+          binding: BindingsExample(),
+          page: () => const HomeBindingsPage(),
+        ),
+        GetPage(
+          name: '/bindings_builder',
+          binding: BindingsBuilder(() {
+            Get.put(
+                BindingsController(nome: 'Inicializado dentro do binding.'));
+          }),
+          page: () => const HomeBindingsPage(),
+        ),
+        GetPage(
+          name: '/bindings_builder_put',
+          binding: BindingsBuilder.put(
+            () => BindingsController(nome: 'Inicializado dentro do binding.'),
+          ),
+          page: () => const HomeBindingsPage(),
         ),
       ],
     );

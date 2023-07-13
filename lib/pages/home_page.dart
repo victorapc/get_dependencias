@@ -26,6 +26,24 @@ class HomePage extends StatelessWidget {
               },
               text: 'Métodos',
             ),
+            ElevatedButtonCustom(
+              onPressed: () {
+                Navigator.of(context).pushNamed('/bindings');
+              },
+              text: 'Bindings',
+            ),
+            ElevatedButtonCustom(
+              onPressed: () {
+                Navigator.of(context).pushNamed('/bindings_builder');
+              },
+              text: 'Bindings Builder',
+            ),
+            ElevatedButtonCustom(
+              onPressed: () {
+                Navigator.of(context).pushNamed('/bindings_builder_put');
+              },
+              text: 'Bindings Builder Put',
+            ),
           ],
         ),
       ),
