@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:get_dependencias/pages/bindings/bindings_controller.dart';
 import 'package:get_dependencias/pages/bindings/bindings_example.dart';
 import 'package:get_dependencias/pages/bindings/home_bindings_page.dart';
+import 'package:get_dependencias/pages/bindings/middleware_binding.dart';
 import 'package:get_dependencias/pages/home_page.dart';
 import 'package:get_dependencias/pages/metodos/create/create_home_page.dart';
 import 'package:get_dependencias/pages/metodos/delete_update/update_home_page.dart';
@@ -71,6 +72,9 @@ class MyApp extends StatelessWidget {
         GetPage(
           name: '/bindings',
           binding: BindingsExample(),
+          middlewares: [
+            MiddlewareBinding(),
+          ],
           page: () => const HomeBindingsPage(),
         ),
         GetPage(
