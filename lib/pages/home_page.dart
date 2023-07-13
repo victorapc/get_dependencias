@@ -55,6 +55,12 @@ class HomePage extends StatelessWidget {
               },
               text: 'Bindings sem Rotas Nomeadas',
             ),
+            ElevatedButtonCustom(
+              onPressed: () {
+                Get.toNamed('/initial_binding');
+              },
+              text: 'Initial Bindings',
+            ),
           ],
         ),
       ),

@@ -5,6 +5,8 @@ import 'package:get_dependencias/pages/bindings/bindings_example.dart';
 import 'package:get_dependencias/pages/bindings/home_bindings_page.dart';
 import 'package:get_dependencias/pages/bindings/middleware_binding.dart';
 import 'package:get_dependencias/pages/home_page.dart';
+import 'package:get_dependencias/pages/initial_binding/initial_binding.dart';
+import 'package:get_dependencias/pages/initial_binding/initial_binding_page.dart';
 import 'package:get_dependencias/pages/metodos/create/create_home_page.dart';
 import 'package:get_dependencias/pages/metodos/delete_update/update_home_page.dart';
 import 'package:get_dependencias/pages/metodos/lazyPut/lazy_put_page.dart';
@@ -25,6 +27,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
+      initialBinding: InitialBinding(),
       title: 'Get Dependencia',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
@@ -91,6 +94,10 @@ class MyApp extends StatelessWidget {
             () => BindingsController(nome: 'Inicializado dentro do binding.'),
           ),
           page: () => const HomeBindingsPage(),
+        ),
+        GetPage(
+          name: '/initial_binding',
+          page: () => const InitialBindingPage(),
         ),
       ],
     );
