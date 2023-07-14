@@ -13,11 +13,18 @@ import 'package:get_dependencias/pages/metodos/lazyPut/lazy_put_page.dart';
 import 'package:get_dependencias/pages/metodos/metodos_home_page.dart';
 import 'package:get_dependencias/pages/metodos/put/put_page.dart';
 import 'package:get_dependencias/pages/metodos/putAsync/put_async_page.dart';
+import 'package:get_dependencias/pages/service/storage_page.dart';
+import 'package:get_dependencias/pages/service/storage_service.dart';
 
 import 'pages/basico/basico_home_page.dart';
 import 'pages/metodos/delete_update/delete_home_page.dart';
 
-void main() {
+void main() async {
+  // Para inicializar o flutter antes do runApp.
+  WidgetsFlutterBinding.ensureInitialized();
+  await Get.putAsync(
+    () => StorageService().init(),
+  );
   runApp(const MyApp());
 }
 
@@ -98,6 +105,10 @@ class MyApp extends StatelessWidget {
         GetPage(
           name: '/initial_binding',
           page: () => const InitialBindingPage(),
+        ),
+        GetPage(
+          name: '/services',
+          page: () => const StoragePage(),
         ),
       ],
     );
